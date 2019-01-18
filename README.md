@@ -105,7 +105,6 @@ The binding element provides protocol and data format details for each portType:
 Services and Ports
 The service element defines the ports supported by the web service. The port element in service defines the name, binding and the address of the service:
 <definitions ...>
-    ...
     <service name="EmployeeService">
         <port name="EmployeeServiceImplPort"
           binding="tns:EmployeeServiceImplPortBinding">
@@ -113,5 +112,4 @@ The service element defines the ports supported by the web service. The port ele
               location="http://localhost:8080/employeeservice" />
         </port>
     </service>
-    ...
 </definitions>
