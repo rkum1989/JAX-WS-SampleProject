@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ritu.java</groupId>
+    <artifactId>JaxwsDemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>employeeWsdlToJava</artifactId>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>employee_wsdl</id>
+						<configuration>
+							<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
+							<wsdlUrls>
+								<wsdlUrl>${basedir}/src/main/resources/wsdl/employeeService.wsdl</wsdlUrl>
+							</wsdlUrls>
+							<packageName>com.ritu.java.service.employee.generated</packageName>
+							<keep>true</keep>
+							<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+						</configuration>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
